@@ -49,7 +49,7 @@ void MX_ETH_Init(void)
 
   if (HAL_ETH_Init(&heth) != HAL_OK)
   {
-    Error_Handler();
+    Error_Handler(__FILE__, __LINE__);
   }
 
 }

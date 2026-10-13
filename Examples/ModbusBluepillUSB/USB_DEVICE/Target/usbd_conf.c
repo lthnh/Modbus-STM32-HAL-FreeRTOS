@@ -178,7 +178,7 @@ void HAL_PCD_ResetCallback(PCD_HandleTypeDef *hpcd)
 
   if ( hpcd->Init.speed != PCD_SPEED_FULL)
   {
-    Error_Handler();
+    Error_Handler(__FILE__, __LINE__);
   }
     /* Set Speed. */
   USBD_LL_SetSpeed((USBD_HandleTypeDef*)hpcd->pData, speed);

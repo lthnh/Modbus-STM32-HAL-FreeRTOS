@@ -101,7 +101,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
     PeriphClkInitStruct.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK2;
     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
     {
-      Error_Handler();
+      Error_Handler(__FILE__, __LINE__);
     }
 
     /* Peripheral clock enable */
@@ -132,7 +132,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
     hdma_usart1_rx.Init.Priority = DMA_PRIORITY_LOW;
     if (HAL_DMA_Init(&hdma_usart1_rx) != HAL_OK)
     {
-      Error_Handler();
+      Error_Handler(__FILE__, __LINE__);
     }
 
     __HAL_LINKDMA(huart,hdmarx,hdma_usart1_rx);
@@ -149,7 +149,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
     hdma_usart1_tx.Init.Priority = DMA_PRIORITY_LOW;
     if (HAL_DMA_Init(&hdma_usart1_tx) != HAL_OK)
     {
-      Error_Handler();
+      Error_Handler(__FILE__, __LINE__);
     }
 
     __HAL_LINKDMA(huart,hdmatx,hdma_usart1_tx);
@@ -226,7 +226,7 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef* hpcd)
     PeriphClkInitStruct.UsbClockSelection = RCC_USBCLKSOURCE_PLLSAI1;
     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
     {
-      Error_Handler();
+      Error_Handler(__FILE__, __LINE__);
     }
 
     __HAL_RCC_GPIOA_CLK_ENABLE();

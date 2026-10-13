@@ -52,7 +52,7 @@ void MX_DFSDM1_Init(void)
   hdfsdm1_channel1.Init.RightBitShift = 0x00;
   if (HAL_DFSDM_ChannelInit(&hdfsdm1_channel1) != HAL_OK)
   {
-    Error_Handler();
+    Error_Handler(__FILE__, __LINE__);
   }
   /* USER CODE BEGIN DFSDM1_Init 2 */
 

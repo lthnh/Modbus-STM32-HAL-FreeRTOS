@@ -53,7 +53,7 @@ void MX_SPI3_Init(void)
   hspi3.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
   if (HAL_SPI_Init(&hspi3) != HAL_OK)
   {
-    Error_Handler();
+    Error_Handler(__FILE__, __LINE__);
   }
   /* USER CODE BEGIN SPI3_Init 2 */
 
